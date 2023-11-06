@@ -77,6 +77,12 @@ export default function LinkedIn<P extends LinkedInProfile>(
     id: "linkedin",
     name: "LinkedIn",
     type: "oidc",
+    authorization: {
+      url: "https://www.linkedin.com/oauth/v2/authorization",
+      params: "openid profile email",
+    },
+    idToken: true,
+    token: "https://www.linkedin.com/oauth/v2/accessToken",
     client: { token_endpoint_auth_method: "client_secret_post" },
     issuer: "https://www.linkedin.com",
     jwks_endpoint: "https://www.linkedin.com/oauth/openid/jwks",
